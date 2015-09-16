@@ -49,6 +49,10 @@ void hero() {
   /* INSERT YOUR CODE HERE! */
   /* REPLACE THIS STUB! */  text( "[[[[ Zoog. ]]]]", 200, 200 );
   rect( x,y, 50,80 );
+  x= x+dx; 
+  if(x< 20 || x>width-40) dx= -dx;
+  y= y+dy; 
+  if(y< 20 || y> height-20) dy= -dy;
 }
 void dog() {
   dogX=  dogX - (dogX-x)/30;
