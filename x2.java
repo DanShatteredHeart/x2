@@ -2,8 +2,8 @@
 //////// Whoever Whoever  (CST 112; today's date?)
 
 //////// Please change these to your name and today's date.
-String author=  "Whoever Whatever";
-String title=  " ??? ";
+String author=  "Danny R."; 
+String title=  " Come On B ";
 String help=  " Click to relocate hero \n 'q' to quit; 'r' to reset. ";
 
 
@@ -36,6 +36,36 @@ void scene() {
   /* INSERT YOUR CODE HERE! */    background( 200,255,255 );
   fill(0);
   /* REPLACE THIS STUB! */  text( "scene", 100, 100 );
+ 
+  //// SCENE:  sky, sun, tree, house, etc.
+  background( 50,200,255 );                // sky
+  stroke(0);
+  fill( 255,255,0 );
+  ellipse( width*3/4, height/8, 50,50 );    // sun
+  // Grass
+  stroke(0);
+  fill(200,150,100);
+  rect(125,horizon/1.5,30,100);
+  fill( 100,200,100 );
+  rect( 0,horizon, width,height*3/4 );      // grass.
+  
+  /* INSERT YOUR CODE HERE! */
+  triangle( 140,horizon/2, 100,horizon-20/2, 180,horizon-20/2  );
+  triangle( 140,horizon/2, 90,horizon-25, 180,horizon-25  );  // tree
+ 
+ 
+ stroke(0);
+  //not an iglo
+ fill(255,255,155);
+rect(110,150,50/2,50);
+rect(60,150, 50/2,50);
+ fill(255,255,155);
+ arc(100,250,150,150,PI,TWO_PI); 
+fill(0,0,0); 
+arc(100,250,20,50,PI,TWO_PI);  
+fill(0);
+text("CAPSULE CORP.", 50,210);  // house
+  fill(0);
 }
 
 void messages() {
@@ -47,12 +77,13 @@ void messages() {
 //// ACTION:  move (x,y) coordinates of hero & dog; show them.
 void hero() {
   /* INSERT YOUR CODE HERE! */
-  /* REPLACE THIS STUB! */  text( "[[[[ Zoog. ]]]]", 200, 200 );
-  rect( x,y, 50,80 );
+  /* REPLACE THIS STUB! */  text( "Majin Buu", 200, 200 );
+  fill(255,100,100);
+   ellipse( x,y, 70,80 );
   x= x+dx; 
-  if(x< 20 || x>width-40) dx= -dx;
+  if(x< 50 || x>width-50) dx= -dx;
   y= y+dy; 
-  if(y< 20 || y> height-20) dy= -dy;
+  if(y< 0 || y> height-50) dy= -dy;
 }
 void dog() {
   dogX=  dogX - (dogX-x)/30;
@@ -60,10 +91,10 @@ void dog() {
   text( dogX, 10, 10 );
   text( dogY, 10, 20 );
   //
-  fill( 150,0,0 );
+  fill( 250,180,120);
   rect(dogX,dogY, 60,30 );
   /* INSERT YOUR CODE HERE! */
-  /* REPLACE THIS STUB! */  text( "woof, woof!d!!", 150, 150 );
+  /* REPLACE THIS STUB! */  text( "woof, woof!!!", 150, 150 );
 }
 
 
