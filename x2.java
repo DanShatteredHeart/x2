@@ -5,7 +5,7 @@
 String author=  "Danny R."; 
 String title=  " Come On B ";
 String help=  " Click to relocate hero \n 'q' to quit; 'r' to reset. ";
-
+int count=0;
 
 //// GLOBALS:  coordinates, speed, etc.
 float horizon;
@@ -25,10 +25,12 @@ void setup() {
 
 //// NEXT FRAME:  scene, action, show.
 void draw() {
+  count= count + 1;
   scene();
   hero();
   dog();
   messages();
+  
 }
 
 //// SCENE:  sky, sun, tree, house, etc.
@@ -86,6 +88,7 @@ void hero() {
   if(y< 0 || y> height-50) dy= -dy;
 }
 void dog() {
+  float dogDX= (dogX-x)/30;
   dogX=  dogX - (dogX-x)/30;
   dogY=  dogY - (dogY-y)/40;
   text( dogX, 10, 10 );
@@ -95,6 +98,20 @@ void dog() {
   rect(dogX,dogY, 60,30 );
   /* INSERT YOUR CODE HERE! */
   /* REPLACE THIS STUB! */  text( "woof, woof!!!", 150, 150 );
+float headX= dogX-10;
+if(dogDX > 0) {
+  headX= dogX+50;
+}
+rect( headX,dogY-15,25,15);
+strokeWeight(6);
+if(count/30 % 2 == 0){
+line(dogX,dogY+30, dogX, dogY+30+20);
+line(dogX,dogY+30, dogX+20, dogY+30+20);
+} else{
+  line(dogX,dogY+30, dogX, dogY+30+20);
+line(dogX,dogY+30, dogX-20, dogY+30+20);
+}
+strokeWeight(1);
 }
 
 
