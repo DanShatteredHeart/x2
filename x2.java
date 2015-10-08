@@ -98,9 +98,9 @@ void dog() {
   rect(dogX,dogY, 60,30 );
   /* INSERT YOUR CODE HERE! */
   /* REPLACE THIS STUB! */  text( "woof, woof!!!", 150, 150 );
-float headX= dogX-10;
+float headX= dogX+50;
 if(dogDX > 0) {
-  headX= dogX+50;
+  headX= dogX-25;
 }
 rect( headX,dogY-15,25,15);
 strokeWeight(6);
@@ -109,7 +109,14 @@ line(dogX,dogY+30, dogX, dogY+30+20);
 line(dogX,dogY+30, dogX+20, dogY+30+20);
 } else{
   line(dogX,dogY+30, dogX, dogY+30+20);
-line(dogX,dogY+30, dogX-20, dogY+30+20);
+  line(dogX,dogY+30, dogX-20, dogY+30+20);
+}
+if(count/30 % 2 == 0){
+line(dogX+60,dogY+30, dogX+60, dogY+30+20);
+line(dogX+60,dogY+30, dogX+40, dogY+30+20);
+} else{
+  line(dogX+60,dogY+30, dogX+25, dogY+30+20);
+  line(dogX+60,dogY+30, dogX+40, dogY+30+20);
 }
 strokeWeight(1);
 }
