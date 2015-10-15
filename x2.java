@@ -111,8 +111,13 @@ if(dogDX > 0) {
   headX= dogX-20;
   
 }
+float earX= dogX+50;
+if(dogDX > 0) {
+  earX= dogX;
+  
+}
 rect( headX,dogY-15,25,15);
-ellipse(headX,dogY-15, 20,10);
+ellipse(earX,dogY-15, 20,10);
 strokeWeight(6);
 if(count/30 % 2 == 0){
 line(dogX,dogY+30, dogX, dogY+30+20);
