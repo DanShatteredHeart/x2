@@ -86,6 +86,14 @@ void hero() {
   if(x< 50 || x>width-50) dx= -dx;
   y= y+dy; 
   if(y< 0 || y> height-50) dy= -dy;
+  fill(0);
+  ellipse(x-18,y-20, 10,1);
+ ellipse(x-0,y-20, 10,1);
+ fill(255,100,120);
+ ellipse(x+0,y-10,10,10);
+ fill(255);
+ arc(x,y,75,80,HALF_PI,PI);
+ 
 }
 void dog() {
   float dogDX= (dogX-x)/30;
@@ -100,9 +108,11 @@ void dog() {
   /* REPLACE THIS STUB! */  text( "woof, woof!!!", 150, 150 );
 float headX= dogX+50;
 if(dogDX > 0) {
-  headX= dogX-25;
+  headX= dogX-20;
+  
 }
 rect( headX,dogY-15,25,15);
+ellipse(headX,dogY-15, 20,10);
 strokeWeight(6);
 if(count/30 % 2 == 0){
 line(dogX,dogY+30, dogX, dogY+30+20);
